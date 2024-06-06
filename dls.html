@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dls</title>
+    <link rel="stylesheet" href="./bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <script src="./jquery-3.7.0.js"></script>
+    <style>
+        body
+        {
+            background-color: aliceblue;
+            overflow-x: hidden;
+        }
+        main
+        {
+            position: relative;
+            top: 15vh;
+        }
+        .bg-menu
+        {
+            background: linear-gradient(80deg,rgb(87, 168, 255),rgb(163, 226, 253));
+        }
+        menu
+        {
+            right: -75%;
+            top: -2.7%;
+            height: 101vh;
+        }
+        #messenger
+        {
+            color:rgb(138, 18, 236);
+        }
+        #instagram
+        {
+            color: rgb(204, 18, 195);
+        }
+        #footer
+        {
+            position: relative;
+            top: 18vh;
+            background: linear-gradient(90deg,rgb(215, 213, 213),rgb(252, 251, 251));
+        }
+        @font-face
+        {
+            src: url(./fFireBlast.ttf);
+            font-family: "test";
+        }
+        @font-face
+        {
+            src: url(./Fighting\ Spirit\ 2\ bold.otf);
+            font-family: "test2";
+        }
+        #me,#logo
+        {
+            font-family: test;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex align-items-center justify-content-between p-2 shadow fixed-top bg-white">
+        <h1 id="logo"><i class="fa fa-gamepad"></i> Hisuka Games</h1>
+        <a href="index.html" class="text-decoration-none fs-3 fw-semibold">back <i class="bi-arrow-right"></i></a>
+    </header>
+    <main>
+        <h1 class="mb-5 mx-3">download dream league soccer 2022 offline.</h1>
+        <div id="gallery" class="d-flex overflow-hidden">
+            <button id="b1" class="bi-arrow-left-circle-fill btn fs-1 text-primary float-start"></button>
+            <img id="cureImg" class="d-block w-75 m-auto rounded shadow" src="./imgs/dls1.jpg">
+            <button id="b2" class="bi-arrow-right-circle-fill btn fs-1 text-primary float-end"></button>
+        </div>
+        <table class="table bg-white m-1 my-5">
+            <tr>
+                <th>Name:</th>
+                <td>dream league soccer 2022</td>
+            </tr>
+            <tr>
+                <th>Size:</th>
+                <td>380 MB</td>
+            </tr>
+            <tr>
+                <th>device:</th>
+                <td>Android <i class="bi-android2 text-success"></i></td>
+            </tr>
+            <tr>
+                <th>Company:</th>
+                <td>FTG</td>
+            </tr>
+        </table>
+        <h4> - Description :</h4>
+        <p class="mx-3">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur, est 
+            sequi eos inventore sapiente voluptatum expedita nesciunt nisi repudiandae nobis tempora.
+            Deserunt sed enim recusandae quibusdam dolorem reiciendis, quam doloribus.
+        </p>
+
+        <h4> - How to install ?</h4>
+        <ol>
+            <li>after install go to z-archive and extract the file.</li>
+            <li>move data file into <b>Android/data/</b> and paste it there.</li>
+            <li>move obb file into <b>Android/obb/</b>and paste it there.</li>
+            <li>install <b>Apk</b> and enjoy !</li>
+        </ol>
+        <a href="#" class="btn btn-success w-50 d-block m-auto mt-5 bi-download"> dls22.zip</a>
+        <a href="#" class=" text-center d-block m-auto my-2 bi-download text-decoration-none"> Zarchive.apk</a>
+    </main>
+    <footer id="footer" class="blockquote-footer text-center shadow">
+                <h3 class="text-center">Contact Us</h3>
+                <a href="#" class="bi-envelope-at-fill text-dark mx-1 fs-1"></a>
+                <a href="#" class="bi-facebook mx-1 fs-1"></a>
+                <a id="messenger" href="#" class="bi-messenger mx-1 fs-1"></a>
+                <a href="#" class="bi-whatsapp text-success mx-1 fs-1"></a>
+                <a href="#" class="bi-telegram text-info mx-1 fs-1"></a>
+                <a id="instagram" href="#" class="bi-instagram mx-1 fs-1"></a>
+                <p><i class="fa fa-copyright"></i> 2023-2024 by <label id="me" class="fs-2"> Hisuka.</label></p>
+    </footer>
+    <script>
+        var btnClose = $("#btnClose");
+        var menu = $("#menu");
+        var list = $("#list");
+        btnClose.click(()=>
+        {
+            menu.animate({right:"-75%"});
+        });
+        list.click(()=>
+        {
+            menu.animate({right:"0%"});
+        });
+        var b1 = $("#b1");
+        var b2 = $("#b2");
+        var cureImg = $("#cureImg");
+        var src = 1;
+        b2.click(()=>
+        {
+            src++;
+            if (src<=4)
+            {
+                cureImg.attr("src","./imgs/dls"+src+".jpg");
+            }
+            if (src == 5)
+            {
+                src = 1;
+                cureImg.attr("src","./imgs/dls"+src+".jpg");
+            }
+        });
+        b1.click(()=>
+        {
+           src--;
+           if (src==0)
+           {
+                src = 4;
+                cureImg.attr("src","./imgs/dls"+src+".jpg");
+           }
+           else
+           {
+                cureImg.attr("src","./imgs/dls"+src+".jpg");
+           }
+        })
+    </script>
+</body>
+</html>
