@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hisuka Games</title>
+    <link rel="stylesheet" href="./bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.5.2-web/css/all.css">
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jquery-3.7.0.js"></script>
+    <style>
+        body
+        {
+            background-color: aliceblue;
+        }
+        main
+        {
+            position: relative;
+            top: 15vh;
+        }
+        .bg-menu
+        {
+            background: linear-gradient(80deg,rgb(87, 168, 255),rgb(163, 226, 253));
+        }
+        menu
+        {
+            right: -75%;
+            top: -3%;
+            height: 101vh;
+        }
+        #messenger
+        {
+            color:rgb(138, 18, 236);
+        }
+        #instagram
+        {
+            color: rgb(204, 18, 195);
+        }
+        #footer
+        {
+            height: 25%;
+            top: 55%;
+        }
+        #alert1
+        {
+            left: 25%;
+            top: 40%;
+        }
+        @font-face
+        {
+            src: url(./fFireBlast.ttf);
+            font-family: "test";
+        }
+        @font-face
+        {
+            src: url(./Fighting\ Spirit\ 2\ bold.otf);
+            font-family: "test2";
+        }
+        #me,#logo
+        {
+            font-family: test;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="d-flex align-items-center justify-content-between p-1 shadow fixed-top bg-white">
+        <h1 id="logo"><img src="./imgs/logo.jpg" class="col-2"> HisukaGames</h1>
+        <button id="list" class="bi bi-list btn fs-2"></button>
+        <menu id="menu" class="bg-menu p-2 w-75 shadow position-fixed">
+            <button id="btnClose" class="btn-close my-1 float-end"></button>
+            <br>
+            <input id="search" type="text" placeholder="search" class="w-75">
+            <button id="searchBtn" class="bi-search pb-3 btn"></button>
+            <div id="footer" class="bg-white position-relative blockquote-footer text-center  align-items-center">
+                <h3 class="text-center">Contact Us</h3>
+                <a href="#" class="bi-envelope-at-fill text-dark mx-1 fs-1"></a>
+                <a href="#" class="bi-facebook mx-1 fs-1"></a>
+                <a id="messenger" href="#" class="bi-messenger mx-1 fs-1"></a>
+                <a href="#" class="bi-whatsapp text-success mx-1 fs-1"></a>
+                <a href="#" class="bi-telegram text-info mx-1 fs-1"></a>
+                <a id="instagram" href="#" class="bi-instagram mx-1 fs-1"></a>
+                <p><i class="fa fa-copyright"></i> 2023-2024 by <label id="me" class="fs-2"> Hisuka.</label></p>
+            </div>
+        </menu>
+    </header>
+    <main class="d-flex justify-content-around flex-wrap">
+            <div class="card bg-white col-5 text-decoration-none text-dark p-1 my-3 pes pes18 pes2024 football sport">
+                <img class="rounded mb-1" src="./imgs/pes1.jpg">
+                <h4>pes 2024 offline</h4>
+                <a href="pes.html" class="btn btn-success m-2 bi-download"> Download</a>
+            </div>
+    																		<div class="card bg-white col-5 text-decoration-none text-dark p-1 my-3 fifa pes18 pes2024 football sport">
+                <img class="rounded mb-1" src="./imgs/fifa1.jpg">
+                <h4>fifa 24 mod fifa 14 offline</h4>
+                <a href="fifa.html" class="btn btn-success m-2 bi-download"> Download</a>
+            </div>
+          
+    </main>
+    <div id="alert1" class="position-fixed w-50 text-center">
+        <h4 class="bi-database-slash"> No result found</h4>
+        <a href="index.html" class="text-decoration-none h5"><i class="fa fa-refresh"></i> refresh</a>
+    </div>
+    <script>
+        var btnClose = $("#btnClose");
+        var menu = $("#menu");
+        var list = $("#list");
+        btnClose.click(()=>
+        {
+            menu.animate({right:"-75%"});
+        });
+        list.click(()=>
+        {
+            menu.animate({right:"0%"});
+        });
+        var search = $("#search");
+        var searchBtn = $("#searchBtn");
+        var cards = $(".card");
+        var alert1 = $("#alert1");
+        alert1.hide();
+        searchBtn.click(()=>
+        {
+            menu.animate({right:"-75%"});
+            var exist = false;
+            if (search.val().trim() != "")
+            {
+                for (const card of cards)
+                {
+                    if (card.classList.contains(search.val().toLowerCase().trim()))
+                    {
+                        $(card).show();
+                        exist = true;
+                    }
+                    else
+                    {
+                        $(card).hide();
+                    }
+                }
+                if (!exist)
+                {
+                    alert1.show();
+                }
+                else
+                {
+                    alert1.hide();
+                }
+            }
+            else
+            {
+                for (const card of cards)
+                {
+                    $(card).show();
+                }
+                alert1.hide();
+            }
+        });
+    </script>
+</body>
+</html>
